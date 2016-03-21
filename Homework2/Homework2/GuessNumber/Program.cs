@@ -15,6 +15,7 @@ namespace GuessNumber
             int[] guessNum = new int[4];
             int i, j, a, b;
 
+            // 1.由電腦以亂數產生 4 個 0~9 的不重複數字
             for (i = 0; i < 4; i++)
             {
                 do //產生0~9亂數, 並過濾重複的數字
@@ -26,7 +27,7 @@ namespace GuessNumber
                         if (targetNum[i] == targetNum[j])
                             break;
                     }
-                } while (j < i); //繼續比較第 i 個數字與前 i-1 個數字是否有重複
+                } while (j < i); //若有重複, 則產生另一亂數, 繼續比較第 i 個數字與前 i-1 個數字是否有重複
             }
 
             //Console.WriteLine(string.Format("targetNum = {0}{1}{2}{3}", targetNum[0], targetNum[1], targetNum[2], targetNum[3]));
@@ -34,6 +35,7 @@ namespace GuessNumber
 
             do
             {
+                // 2. 由 user 輸入 4 個 0~9 的不重複數字
                 Console.WriteLine("猜答案:");
                 string line = Console.ReadLine();
 
@@ -57,7 +59,7 @@ namespace GuessNumber
                 if (i < 4)  // 當輸入有錯誤時重新輸入
                     continue;
 
-                // 比較兩個數字是 a A b B
+                // 3. 比較 guessNum 與 targetNum 是 a A b B
                 a = b = 0;
 
                 for (i = 0; i < 4; i++)
