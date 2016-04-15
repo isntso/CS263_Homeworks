@@ -89,7 +89,7 @@ namespace GuessNumber
                 }
                 else
                 {
-                    if (a < 0 || a > 4 || b < 0 || b > 4)
+                    if (a < 0 || a > 4 || b < 0 || b > 4 || a + b > 4)
                     {
                         MessageBox.Show("輸入錯誤, 請重新輸入");
                         return;
